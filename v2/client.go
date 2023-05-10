@@ -1008,3 +1008,7 @@ func (c *Client) NewManagedSubAccountAssetsService() *ManagedSubAccountAssetsSer
 func (c *Client) NewSubAccountFuturesAccountService() *SubAccountFuturesAccountService {
 	return &SubAccountFuturesAccountService{c: c}
 }
+
+func (c *Client) NewAssetTransferService() *AssetTransferService {
+	return &AssetTransferService{c: c}
+}
