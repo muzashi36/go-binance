@@ -57,7 +57,7 @@ func (s *AssetTransferService) Timestamp(timestamp int64) *AssetTransferService 
 	return s
 }
 
-func (s *AssetTransferService) Do(ctx context.Context) (res []*AssetTransfer, err error) {
+func (s *AssetTransferService) Do(ctx context.Context) (*AssetTransfer, error) {
 	r := &request{
 		method:   http.MethodGet,
 		endpoint: "/sapi/v1/asset/transfer",
@@ -69,16 +69,15 @@ func (s *AssetTransferService) Do(ctx context.Context) (res []*AssetTransfer, er
 
 	data, err := s.c.callAPI(ctx, r)
 	if err != nil {
-		return
+		return nil, err
 	}
 
-	res = make([]*AssetTransfer, 0)
-	err = json.Unmarshal(data, &res)
-	if err != nil {
-		return
+	res := AssetTransfer{}
+	if err = json.Unmarshal(data, &res); err != nil {
+		return nil, err
 	}
 
-	return res, nil
+	return &res, nil
 }
 
 type AssetTransfer struct {
