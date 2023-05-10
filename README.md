@@ -2,10 +2,10 @@
 
 A Golang SDK for [binance](https://www.binance.com) API.
 
-[![Build Status](https://travis-ci.org/adshao/go-binance.svg?branch=master)](https://travis-ci.org/adshao/go-binance)
-[![GoDoc](https://godoc.org/github.com/adshao/go-binance?status.svg)](https://godoc.org/github.com/adshao/go-binance)
-[![Go Report Card](https://goreportcard.com/badge/github.com/adshao/go-binance)](https://goreportcard.com/report/github.com/adshao/go-binance)
-[![codecov](https://codecov.io/gh/adshao/go-binance/branch/master/graph/badge.svg)](https://codecov.io/gh/adshao/go-binance)
+[![Build Status](https://travis-ci.org/muzashi36/go-binance.svg?branch=master)](https://travis-ci.org/muzashi36/go-binance)
+[![GoDoc](https://godoc.org/github.com/muzashi36/go-binance?status.svg)](https://godoc.org/github.com/muzashi36/go-binance)
+[![Go Report Card](https://goreportcard.com/badge/github.com/muzashi36/go-binance)](https://goreportcard.com/report/github.com/muzashi36/go-binance)
+[![codecov](https://codecov.io/gh/muzashi36/go-binance/branch/master/graph/badge.svg)](https://codecov.io/gh/muzashi36/go-binance)
 
 All the REST APIs listed in [binance API document](https://github.com/binance-exchange/binance-official-api-docs) are implemented, as well as the websocket APIs.
 
@@ -15,38 +15,38 @@ Make sure you have read binance API document before continuing.
 
 ### API List
 
-Name | Description | Status
------------- | ------------ | ------------
-[rest-api.md](https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md) | Details on the Rest API (/api) | <input type="checkbox" checked> Implemented
-[web-socket-streams.md](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md) | Details on available streams and payloads | <input type="checkbox" checked>  Implemented
-[user-data-stream.md](https://github.com/binance/binance-spot-api-docs/blob/master/user-data-stream.md) | Details on the dedicated account stream | <input type="checkbox" checked>  Implemented
-[margin-api.md](https://binance-docs.github.io/apidocs/spot/en) | Details on the Margin API (/sapi) | <input type="checkbox" checked>  Implemented
-[futures-api.md](https://binance-docs.github.io/apidocs/futures/en/#general-info) | Details on the Futures API (/fapi) | <input type="checkbox" checked>  Partially Implemented
-[delivery-api.md](https://binance-docs.github.io/apidocs/delivery/en/#general-info) | Details on the Coin-M Futures API (/dapi) | <input type="checkbox" checked>  Partially Implemented
+| Name                                                                                                        | Description                               | Status                                                |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------- |
+| [rest-api.md](https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)                     | Details on the Rest API (/api)            | <input type="checkbox" checked> Implemented           |
+| [web-socket-streams.md](https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md) | Details on available streams and payloads | <input type="checkbox" checked> Implemented           |
+| [user-data-stream.md](https://github.com/binance/binance-spot-api-docs/blob/master/user-data-stream.md)     | Details on the dedicated account stream   | <input type="checkbox" checked> Implemented           |
+| [margin-api.md](https://binance-docs.github.io/apidocs/spot/en)                                             | Details on the Margin API (/sapi)         | <input type="checkbox" checked> Implemented           |
+| [futures-api.md](https://binance-docs.github.io/apidocs/futures/en/#general-info)                           | Details on the Futures API (/fapi)        | <input type="checkbox" checked> Partially Implemented |
+| [delivery-api.md](https://binance-docs.github.io/apidocs/delivery/en/#general-info)                         | Details on the Coin-M Futures API (/dapi) | <input type="checkbox" checked> Partially Implemented |
 
 ### Installation
 
 ```shell
-go get github.com/adshao/go-binance/v2
+go get github.com/muzashi36/go-binance/v2
 ```
 
 For v1 API, it has been moved to `v1` branch, please use:
 
 ```shell
-go get github.com/adshao/go-binance/v1
+go get github.com/muzashi36/go-binance/v1
 ```
 
 ### Importing
 
 ```golang
 import (
-    "github.com/adshao/go-binance/v2"
+    "github.com/muzashi36/go-binance/v2"
 )
 ```
 
 ### Documentation
 
-[![GoDoc](https://godoc.org/github.com/adshao/go-binance?status.svg)](https://godoc.org/github.com/adshao/go-binance)
+[![GoDoc](https://godoc.org/github.com/muzashi36/go-binance?status.svg)](https://godoc.org/github.com/muzashi36/go-binance)
 
 ### REST API
 
@@ -68,7 +68,7 @@ A service instance stands for a REST API endpoint and is initialized by client.N
 
 Simply call API in chain style. Call Do() in the end to send HTTP request.
 
-Following are some simple examples, please refer to [godoc](https://godoc.org/github.com/adshao/go-binance) for full references.
+Following are some simple examples, please refer to [godoc](https://godoc.org/github.com/muzashi36/go-binance) for full references.
 
 #### Create Order
 
@@ -322,7 +322,7 @@ Use the `binance.UseTestnet` flag before calling the client creation and the web
 
 ```go
 import (
-    "github.com/adshao/go-binance/v2"
+    "github.com/muzashi36/go-binance/v2"
 )
 
 binance.UseTestnet = true
@@ -335,7 +335,7 @@ Use the `futures.UseTestnet` flag before calling the client creation and the web
 
 ```go
 import (
-    "github.com/adshao/go-binance/v2/futures"
+    "github.com/muzashi36/go-binance/v2/futures"
 )
 
 futures.UseTestnet = true
@@ -348,10 +348,9 @@ Use the `delivery.UseTestnet` flag before calling the client creation and the we
 
 ```go
 import (
-    "github.com/adshao/go-binance/v2/delivery"
+    "github.com/muzashi36/go-binance/v2/delivery"
 )
 
 delivery.UseTestnet = true
 BinanceClient = delivery.NewClient(ApiKey, SecretKey)
 ```
-
