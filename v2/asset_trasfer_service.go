@@ -63,8 +63,37 @@ func (s *AssetTransferService) Do(ctx context.Context) (*AssetTransfer, error) {
 		endpoint: "/sapi/v1/asset/transfer",
 		secType:  secTypeSigned,
 	}
+
 	if s.transferType != nil {
 		r.setParam("type", *s.transferType)
+	}
+
+	if s.startTime != nil {
+		r.setParam("startTime", *s.startTime)
+	}
+
+	if s.endTime != nil {
+		r.setParam("endTime", *s.endTime)
+	}
+
+	if s.current != nil {
+		r.setParam("current", *s.current)
+	}
+
+	if s.size != nil {
+		r.setParam("size", *s.size)
+	}
+
+	if s.fromSymbol != nil {
+		r.setParam("fromSymbol", *s.fromSymbol)
+	}
+
+	if s.toSymbol != nil {
+		r.setParam("toSymbol", *s.toSymbol)
+	}
+
+	if s.timestamp != nil {
+		r.setParam("timestamp", *s.timestamp)
 	}
 
 	data, err := s.c.callAPI(ctx, r)
