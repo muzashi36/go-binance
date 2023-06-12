@@ -586,6 +586,11 @@ func (c *Client) NewSavingsPurchaseHistoryService() *SavingsPurchaseHistoryServi
 	return &SavingsPurchaseHistoryService{c: c}
 }
 
+// NewSavingsRedemptionHistoryService get lending redemption history (Savings)
+func (c *Client) NewSavingsRedemptionHistoryService() *SavingsRedemptionHistoryService {
+	return &SavingsRedemptionHistoryService{c: c}
+}
+
 // NewGetAccountSnapshotService init getting account snapshot service
 func (c *Client) NewGetAccountSnapshotService() *GetAccountSnapshotService {
 	return &GetAccountSnapshotService{c: c}

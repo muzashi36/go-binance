@@ -16,7 +16,7 @@ type SavingsPurchaseHistoryService struct {
 	size        *int32
 }
 
-// LendingType sets the lendingType parameter.
+// LendingType sets the lendingType parameter. ("DAILY" for flexible, "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed)
 func (s *SavingsPurchaseHistoryService) LendingType(lendingType LendingType) *SavingsPurchaseHistoryService {
 	s.lendingType = lendingType
 	return s
@@ -56,7 +56,7 @@ func (s *SavingsPurchaseHistoryService) Size(size int32) *SavingsPurchaseHistory
 func (s *SavingsPurchaseHistoryService) Do(ctx context.Context) (*LendingPurchaseHistory, error) {
 	r := &request{
 		method:   http.MethodGet,
-		endpoint: "/sapi/v1/staking/stakingRecord",
+		endpoint: "/sapi/v1/lending/union/purchaseRecord",
 		secType:  secTypeSigned,
 	}
 	r.setParam("lendingType", s.lendingType)
