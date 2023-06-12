@@ -581,6 +581,11 @@ func (c *Client) NewListSavingsFixedAndActivityProductsService() *ListSavingsFix
 	return &ListSavingsFixedAndActivityProductsService{c: c}
 }
 
+// NewSavingsPurchaseHistoryService get lending purchase history (Savings)
+func (c *Client) NewSavingsPurchaseHistoryService() *SavingsPurchaseHistoryService {
+	return &SavingsPurchaseHistoryService{c: c}
+}
+
 // NewGetAccountSnapshotService init getting account snapshot service
 func (c *Client) NewGetAccountSnapshotService() *GetAccountSnapshotService {
 	return &GetAccountSnapshotService{c: c}
